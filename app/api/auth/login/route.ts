@@ -35,7 +35,8 @@ export async function POST(request: NextRequest) {
 
     // Set a cookie with the user ID as a simple session
     // In a real app, you would use a proper session management system
-    cookies().set({
+    const cookieStore = await cookies();
+    cookieStore.set({
       name: "session_id",
       value: user.id.toString(),
       httpOnly: true,

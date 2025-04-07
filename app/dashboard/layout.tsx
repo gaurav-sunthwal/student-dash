@@ -1,17 +1,17 @@
-import type React from "react"
+import type React from "react";
 // import { redirect } from "next/navigation"
-import { getCurrentUser } from "@/lib/auth"
-import { DashboardNav } from "@/components/dashboard-nav"
-import { UserNav } from "@/components/user-nav"
-import { ModeToggle } from "@/components/theme-toggle"
-import { BookOpen } from "lucide-react"
+import { getCurrentUser } from "@/lib/auth";
+import { DashboardNav } from "@/components/dashboard-nav";
+import { UserNav } from "@/components/user-nav";
+import { ModeToggle } from "@/components/theme-toggle";
+import { BookOpen } from "lucide-react";
 
 export default async function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const user = await getCurrentUser()
+  const user = await getCurrentUser();
 
   if (!user) {
     // redirect("/login")
@@ -23,7 +23,7 @@ export default async function DashboardLayout({
         <div className="flex h-16 items-center px-4 sm:px-6">
           <div className="flex items-center gap-2 font-semibold">
             <BookOpen className="h-6 w-6" />
-            <span>College Dashboard</span>
+            <span>Unisphere</span>
           </div>
           <div className="ml-auto flex items-center space-x-4">
             <ModeToggle />
@@ -40,6 +40,5 @@ export default async function DashboardLayout({
         <main className="flex-1 p-4 md:p-6">{children}</main>
       </div>
     </div>
-  )
+  );
 }
-

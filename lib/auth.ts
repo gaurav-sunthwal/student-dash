@@ -4,7 +4,7 @@ import { users } from "./db/schema"
 import { eq } from "drizzle-orm"
 
 export async function getSession() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const sessionId = cookieStore.get("session_id")?.value
 
   if (!sessionId) {

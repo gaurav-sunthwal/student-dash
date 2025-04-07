@@ -10,10 +10,8 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Switch } from "@/components/ui/switch"
 import { Separator } from "@/components/ui/separator"
-import { useToast } from "@/hooks/use-toast"
-
+import {toast} from "react-toastify"
 export default function SettingsPage() {
-  const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
 
   const [profile, setProfile] = useState({
@@ -40,10 +38,7 @@ export default function SettingsPage() {
     // Simulate API call
     setTimeout(() => {
       setIsLoading(false)
-      toast({
-        title: "Profile updated",
-        description: "Your profile information has been updated successfully.",
-      })
+      toast.success("Profile updated: Your profile information has been updated successfully.")
     }, 1000)
   }
 
@@ -53,10 +48,7 @@ export default function SettingsPage() {
     // Simulate API call
     setTimeout(() => {
       setIsLoading(false)
-      toast({
-        title: "Notification preferences updated",
-        description: "Your notification preferences have been updated successfully.",
-      })
+        toast.success("Notification preferences updated: Your notification preferences have been updated successfully.")
     }, 1000)
   }
 
@@ -66,10 +58,7 @@ export default function SettingsPage() {
     // Simulate API call
     setTimeout(() => {
       setIsLoading(false)
-      toast({
-        title: "Appearance settings updated",
-        description: "Your appearance settings have been updated successfully.",
-      })
+      toast.success("Appearance settings updated: Your appearance settings have been updated successfully.")
     }, 1000)
   }
 
