@@ -63,7 +63,7 @@ interface Announcement {
 
 export default function DashboardPage() {
   // Mock data for demonstration; replace with actual data fetching logic
-  const user: User = { name: "John Doe" };
+  const user: User = { name: "Gaurav Sunthwal" };
   const stats: Stats = { coursesCount: 5, upcomingTodos: 3, recentAnnouncements: 2 };
   const announcementsList: Announcement[] = [
     { id: 1, title: "Exam Schedule", content: "The exam schedule is out.", createdAt: new Date(), courseCode: "CS101" },
